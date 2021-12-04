@@ -16,3 +16,7 @@ intestinal tissue. Here is the abstract of the manuscript:
 ### Further Reading
 
 If you are interested, please read the full story that is freely available [here](https://www.g3journal.org/content/10/11/4271).
+
+### Cite this work
+
+Miller DE, Kahsai L, Buddika K, Dixon MJ, Kim BY, Calvi BR, Sokol NS, Hawley RS, Cook KR. Identification and Characterization of Breakpoints and Mutations on Drosophila melanogaster Balancer Chromosomes. G3 (Bethesda). 2020 Nov 5;10(11):4271-4285. doi: 10.1534/g3.120.401559. PMID: 32972999; PMCID: PMC7642927.

@@ -25,3 +25,7 @@ Here is the abstract of the manuscript:
 ### Further Reading
 
 If you are interested, please read the full story that is freely available [here](https://www.cell.com/cell-reports/fulltext/S2211-1247(17)31676-5?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS2211124717316765%3Fshowall%3Dtrue).
+
+### Cite this work
+
+Luhur A, Buddika K, Ariyapala IS, Chen S, Sokol NS. Opposing Post-transcriptional Control of InR by FMRP and LIN-28 Adjusts Stem Cell-Based Tissue Growth. Cell Reports. 2017 Dec 5;21(10):2671-2677. doi: 10.1016/j.celrep.2017.11.039. PMID: 29212015; PMCID: PMC5728658.

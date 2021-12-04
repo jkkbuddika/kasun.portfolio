@@ -16,3 +16,9 @@ Here is the abstract of the manuscript:
 ### Further Reading
 
 If you are interested, please read the full story that is freely available [here](https://academic.oup.com/g3journal/article/10/12/4541/6048721).
+
+### Cite this work
+
+Luhur A, Mariyappa D, Klueg KM, Buddika K, Tennessen JM, Zelhof AC. Adapting Drosophila melanogaster Cell Lines to Serum-Free Culture Conditions. G3 (Bethesda). 2020 Dec 3;10(12):4541-4551. doi: 10.1534/g3.120.401769. PMID: 33028628.
+
+

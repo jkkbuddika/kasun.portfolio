@@ -21,3 +21,7 @@ Moreover, the featured cover image of the issue was taken by **Kasun Buddika**. 
 ### Research Highlight
 
 Also, this study was highlighted in this issue of JCS. Please read it [here](https://journals.biologists.com/jcs/article/133/10/e1001/224816/Coping-with-stress-granules-in-a-different-way).
+
+### Cite this work
+
+Buddika K, Ariyapala IS, Hazuga MA, Riffert D, Sokol NS. Canonical nucleators are dispensable for stress granule assembly in Drosophila intestinal progenitors. Journal of Cell Science. 2020 May 18;133(10):jcs243451. doi: 10.1242/jcs.243451. PMID: 32265270; PMCID: PMC7325430.

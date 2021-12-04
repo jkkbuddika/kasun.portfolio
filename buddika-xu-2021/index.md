@@ -17,3 +17,7 @@ intestines that traditional profiling techniques require. Here is the abstract o
 
 If you are interested in knowing more about this clever genetic technique, please read the full story that is freely 
 available [here](https://journals.biologists.com/dev/article/148/1/dev196568/223199/I-KCKT-allows-dissection-free-RNA-profiling-of).
+
+### Cite this work
+
+Buddika K, Xu J, Ariyapala IS, Sokol NS. I-KCKT allows dissection-free RNA profiling of adult Drosophila intestinal progenitor cells. Development. 2021 Jan 7;148(1):dev196568. doi: 10.1242/dev.196568. PMID: 33246929.

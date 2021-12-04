@@ -1,0 +1,51 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>My Portfolio</title>
+        <link>/</link>
+        <description>My Portfolio</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 07 Jan 2021 08:57:40 &#43;0800</lastBuildDate>
+            <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+        <item>
+    <title>I-KCKT allows dissection-free RNA profiling of adult Drosophila intestinal progenitor cells</title>
+    <link>/buddika-xu-2021/</link>
+    <pubDate>Thu, 07 Jan 2021 08:57:40 &#43;0800</pubDate><guid>/buddika-xu-2021/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Adapting Drosophila melanogaster Cell Lines to Serum-Free Culture Conditions</title>
+    <link>/luhur-buddika-2020/</link>
+    <pubDate>Tue, 01 Dec 2020 08:57:40 &#43;0800</pubDate><guid>/luhur-buddika-2020/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Identification and Characterization of Breakpoints and Mutations on Drosophila melanogaster Balancer Chromosomes</title>
+    <link>/miller-buddika-2020/</link>
+    <pubDate>Sun, 01 Nov 2020 08:57:40 &#43;0800</pubDate><guid>/miller-buddika-2020/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Canonical nucleators are dispensable for stress granule assembly in Drosophila intestinal progenitors</title>
+    <link>/buddika-ariyapala-2020/</link>
+    <pubDate>Mon, 18 May 2020 08:57:40 &#43;0800</pubDate><guid>/buddika-ariyapala-2020/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Lactate dehydrogenase and glycerol-3-phosphate dehydrogenase cooperatively regulate growth and carbohydrate metabolism during Drosophila melanogaster larval development</title>
+    <link>/li-buddika-2019/</link>
+    <pubDate>Thu, 12 Sep 2019 08:57:40 &#43;0800</pubDate><guid>/li-buddika-2019/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Polycomb group (PcG) proteins and Pax6 cooperate to inhibit in vivo reprogramming of the developing Drosophila eye</title>
+    <link>/zhu-buddika-2018/</link>
+    <pubDate>Wed, 04 Apr 2018 08:57:40 &#43;0800</pubDate><guid>/zhu-buddika-2018/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Opposing Post-transcriptional Control of InR by FMRP and LIN-28 Adjusts Stem Cell-Based Tissue Growth</title>
+    <link>/luhur-buddika-2017/</link>
+    <pubDate>Tue, 05 Dec 2017 08:57:40 &#43;0800</pubDate><guid>/luhur-buddika-2017/</guid>
+    <description><![CDATA[]]></description>
+</item>
+</channel>
+</rss>

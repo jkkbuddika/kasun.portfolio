@@ -16,3 +16,9 @@ fate choices. Here is the abstract of the manuscript:
 
 If you are interested, please read the full story that is freely available [here](https://journals.biologists.com/dev/article/145/7/dev160754/48798/Polycomb-group-PcG-proteins-and-Pax6-cooperate-to).
 Moreover, the featured cover image of the issue was taken by **Kasun Buddika**. See [here](https://journals.biologists.com/dev/issue/145/7). 
+
+### Cite this work
+
+Zhu J, Ordway AJ, Weber L, Buddika K, Kumar JP. Polycomb group (PcG) proteins and Pax6 cooperate to inhibit in vivo reprogramming of the developing Drosophila eye. Development. 2018 Apr 4;145(7):dev160754. doi: 10.1242/dev.160754. PMID: 29530880; PMCID: PMC5963869.
+
+

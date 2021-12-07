@@ -91,7 +91,7 @@
 
 > * :(fas fa-code fa-fw): Coding
 > * :(fas fa-chalkboard fa-fw): Learning new topics
-> * :(fas fa-photo-video fa-fw): Landscape photography
+> * :(fas fa-photo-video fa-fw): Landscape photography (checkout my [Instagram]({{< ref "gallery/" >}}) portfolio)
 > * :(fas fa-route fa-fw): Travel photography
 > * :(fas fa-hiking fa-fw): Backpacking
 > * :(fas fa-tree fa-fw): Exploring National Parks

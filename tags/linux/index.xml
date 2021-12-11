@@ -1,0 +1,13 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Linux - Tag - Personal Portfolio</title>
+        <link>/tags/linux/</link>
+        <description>Linux - Tag - Personal Portfolio</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 07 Dec 2021 18:22:40 &#43;0800</lastBuildDate><atom:link href="/tags/linux/" rel="self" type="application/rss+xml" /><item>
+    <title>Introduction to Linux in Bioinformatics</title>
+    <link>/biocoders-blog-1/</link>
+    <pubDate>Tue, 07 Dec 2021 18:22:40 &#43;0800</pubDate><guid>/biocoders-blog-1/</guid>
+    <description><![CDATA[]]></description>
+</item>
+</channel>
+</rss>

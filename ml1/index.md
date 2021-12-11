@@ -3,9 +3,9 @@
 
 <!--more-->
 
-I started taking a few online classes to get myself familiarized with machine learning. In this series of blog posts 
-I will try to organize and summarize everything I learnt. This is the first of many tutorials that will get you 
-started on machine learning using python. 
+I started getting myself familiarized with machine learning in the last couple of months. In this series of blog posts 
+I will try to organize and summarize the things I learnt. Subsequent posts will also present the final outcomes of few 
+exciting projects I have completed. Let's get started.
 
 ### **What is Machine learning?**
 

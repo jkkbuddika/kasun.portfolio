@@ -18,11 +18,11 @@ some of these steps. Now, let's review what these steps are and how to perform t
 5. Splitting the data set into training and test data
 6. Feature scaling
 
-{{< admonition >}}
+{{< admonition note "Example data set" >}}
 To go through these steps, I downloaded one of the most popular data sets from Kaggle (please see 
 [here](https://www.kaggle.com/fedesoriano/heart-failure-prediction) for a detailed description about the data set) and 
 modified it a little bit to highlight these steps. The modified data set can be found 
-[here](https://github.com/jkkbuddika/Datasets_ML).
+[here](https://raw.githubusercontent.com/jkkbuddika/Datasets_ML/).
 {{< /admonition >}}
 
 ### 1. Importing and exploring the data set
@@ -30,15 +30,15 @@ modified it a little bit to highlight these steps. The modified data set can be 
 First step of data pre-processing is importing the data set using Pandas to create a pandas data frame. The following 
 code snippet will do just that and display the first five rows of the data frame.
 
-{{< admonition tip "Python code block" >}}
-```Python
-# import pandas library
+{{< admonition abstract "Import data set" false >}}
+```
 import pandas as pd
+dataset = pd.read_csv('https://raw.githubusercontent.com/jkkbuddika/Datasets_ML/main/heart.csv')
+```
+{{< /admonition >}}
 
-# import the data set
-dataset = pd.read_csv('heart.csv')
-
-# display the first few lines of the data set
+{{< admonition tip "Display the first 5 rows of the data set" false >}}
+```
 dataset.head()
 ```
 ![image](Image_1.png "Data set")
@@ -51,9 +51,8 @@ idea to quickly assess descriptive statistics of the data set. Pandas makes this
 step alone can provide so much details. As you can see below, some of the numeric variables need to be scaled to 
 ensure optimal performance of the final model.
 
-{{< admonition tip "Python code block" >}}
-```Python
-# generate descriptive statistics
+{{< admonition tip "Generate descriptive statistics" false >}}
+```
 dataset.describe()
 ```
 ![image](Image_2.png "Descriptive statistics of numeric variables")
@@ -66,20 +65,18 @@ column will reveal the age distribution. **Seaborn** is a great data visualizati
 that is written on top of the popular matplotlib library (see [here](https://seaborn.pydata.org/index.html) for more 
 details).
 
-{{< admonition tip "Python code block" >}}
+{{< admonition example "Plot male/female counts" false >}}
 ```
-# import the seaborn and matplotlib libraries
 import seaborn as sns
 import matplotlib.pyplot as plt
-
-# plot the male/female counts
 sns.countplot(data=dataset, x='Sex', palette='Dark2')
 plt.show()
 ```
 ![image](Image_3.jpg "Count of males and females in the data set")
+{{< /admonition >}}
 
-```python
-# plot a density plot to show age distribution
+{{< admonition example "Plot age distribution" false >}}
+```
 sns.displot(data=dataset, x='Age', kde=True, color='#960018')
 plt.show()
 ```
@@ -91,20 +88,18 @@ your data set contain columns with missing values. We can easily get this inform
 modified data set contain three columns with missing values. Therefore, we will have to take care of them before 
 training a model with this data.
 
-{{< admonition tip "Python code block" >}}
-```python
-# detect missing values
+{{< admonition tip "Identify columns with missing values" false >}}
+```
 dataset.isnull().sum()
 ```
 ![image](Image_5.png "Sum of rows with missing values")
 {{< /admonition >}}
 
-I am not going to go through all exploratory analyses you can perform. Here are few important conclusions drawn from 
+>I am not going to go through all exploratory analyses you can perform. Here are few important conclusions drawn from 
 this initial analysis:
-
-- The data set contain categorical data and needs to be encoded.
-- Numeric variables need to be scaled to ensure optimal model performance.
-- There are columns with missing data need to be taken care of.
+> - The data set contain categorical data and needs to be encoded.
+> - Numeric variables need to be scaled to ensure optimal model performance.
+> - There are columns with missing data need to be taken care of.
 
 ### 2. Create matrix of features and dependent variable vector
 
@@ -117,21 +112,22 @@ not know how to do this, please refer to this stackoverflow
 [thread](https://stackoverflow.com/questions/13148429/how-to-change-the-order-of-dataframe-columns). In our example 
 data set, the dependent variable *HeartDisease* is in the last column. Therefore, we do not have to rearrange. 
 
-{{< admonition tip "Python code block" >}}
-```python
-# create the matrix of features (X) and dependent variable vector (y)
+{{< admonition abstract "Create the matrix of features (X) and dependent variable vector (y)" false >}}
+```
 X = dataset.iloc[:, :-1].values
 y = dataset.iloc[:, -1].values
 ```
+{{< /admonition >}}
 
-```python
-# print independent variable vector
+{{< admonition success "Independent variable vector" false >}}
+```
 print(X)
 ```
 ![image](Image_6.png "Features")
+{{< /admonition >}}
 
-```python
-# print dependent variable vector
+{{< admonition success "Dependent variable vector" false >}}
+```
 print(y)
 ```
 ![image](Image_7.png "Dependent variable")
@@ -160,13 +156,11 @@ class of `sklearn.impute` module. You can simply pass the `strategy` argument sp
 mean, median or mode. All columns with missing data contain numerical values, therefore, let's use the mean to 
 replace missing values.
 
-{{< admonition tip "Python code block" >}}
-```python
-# import required modules
+{{< admonition abstract "Imputation using SimpleImputer class" false >}}
+```
 from sklearn.impute import SimpleImputer
 import numpy as np
 
-# imputation: replacement strategy "mean"
 imputer = SimpleImputer(missing_values=np.nan, strategy='mean')
 imputer.fit(X[:, 3:5])
 X[:, 3:5] = imputer.transform(X[:, 3:5])
@@ -200,36 +194,39 @@ vectors for each category in a categorical variable. For instance, if the catego
 Let's employ label encoding for *Sex* and one-hot encoding for *ChestPainType*, so that we can see how each can be 
 done. We can use the `sklearn.preprocessing` module for both of these.
 
-{{< admonition tip "Python code block" >}}
-```python
-# before label encoding
+{{< admonition warning "Before label encoding" false >}}
+```
 print(X)
 ```
 ![image](Image_8.png "Before label encoding Sex")
+{{< /admonition >}}
 
-```python
-# encoding Sex using LabelEncoder class
+{{< admonition abstract "Encode using LabelEncoder class" false >}}
+```
 from sklearn.preprocessing import LabelEncoder
 le = LabelEncoder()
 X[:, 1] = le.fit_transform(X[:, 1])
 ```
+{{< /admonition >}}
 
-```python
-# after label encoding
+{{< admonition success "After label encoding" false >}}
+```
 print(X)
 ```
 ![image](Image_9.png "After label encoding Sex")
+{{< /admonition >}}
 
-```python
-# encoding ChestPainType using OneHotEncoder class
+{{< admonition abstract "Encode using OneHotEncoder class" false >}}
+```
 from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import OneHotEncoder
 ct = ColumnTransformer(transformers=[('encoder', OneHotEncoder(), [2])], remainder='passthrough')
 X = np.array(ct.fit_transform(X))
 ```
+{{< /admonition >}}
 
-```python
-# after one-hot encoding
+{{< admonition success "After one-hot encoding" false >}}
+```
 print(X)
 ```
 ![image](Image_10.png "After one-hot encoding ChestPainType")
@@ -264,6 +261,62 @@ avoid information leakage. In other words, if we perform feature scaling prior t
 training data. This can make a poorly performing model a good one. We can use the `train_test_split` class of the 
 `sklearn.model_selection` module to get this job done. In this example, let's perform a 80:20 split. See below.
 
-``` { .python }
-<p>HTML Document</p>
+{{< admonition abstract "Train-test split" false >}}
 ```
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 1)
+```
+{{< /admonition >}}
+
+### 6. Feature scaling
+
+The last step of data pre-processing is *feature scaling*. This is a crucial step of data pre-processing. In many 
+instances, input data we use for training a model can contain numeric variables/features that spans varying degrees of 
+magnitude, range and units. Although some of the algorithms are not sensitive to these discrepancies (*i.e.,* 
+tree-based methods), many are very sensitive to this (*i.e.,* gradient descent-based and distance-based algorithms). 
+Therefore, knowing how to handle this issue is important. There are two common approaches for feature scaling:
+
+1. **Normalization:** Also know as min-max scaling, this technique shifts and rescale values so that they end up 
+ranging between 0 and 1. This is a good approach to be used when the values do not follow a Gaussian distribution and 
+often used when training KNNs and neural networks. We can use the `MinMaxScalar` class of the `sklearn.preprocessing` 
+module to perform this task.
+
+2. **Standardization:** In this technique, values are centered around the mean with a unit standard deviation. In other 
+words, the mean of the attributes become zero and the final resulting distribution has a unite standard deviation. This 
+method is used when the values follow a Gaussian distribution (not required to be true). We can use the 
+`StandardScaler` class of the `sklearn.preprocessing` module to get this task done.
+
+It is always a good idea to train the model following both of these scaling methods and assess which method results in 
+a better performing model. I will let you to try and do normalization. Let's use standardization to scale our data. 
+During scaling you have the option to include or exclude encoded data. This may or may not affect the overall 
+performance of the final model. In this example I will scale everything. Try without scaling encoded data as well.
+
+{{< admonition warning "Before feature scaling" false >}}
+```
+print(X)
+```
+![image](Image_11.png "Before feature scaling")
+{{< /admonition >}}
+
+{{< admonition abstract "Standardize feature data using StandardScaler class" false >}}
+```
+from sklearn.preprocessing import StandardScaler
+sc = StandardScaler()
+X_train[:, :] = sc.fit_transform(X_train[:, :])
+X_test[:, :] = sc.transform(X_test[:, :])
+```
+{{< /admonition >}}
+
+{{< admonition success "After feature scaling" false >}}
+```
+print(X)
+```
+![image](Image_12.png "After feature scaling")
+{{< /admonition >}}
+
+This concludes the data pre-processing phase. In general, data scientists spend most of their time performing these 
+steps. I wanted to give you a clear step-wise guide to summarize all you want to know before getting into training a 
+model. Please note that depending on the problem you are addressing and the nature of your data set, you will have to 
+make alterations to this general scheme. As you have seen, there are multiple ways of achieving the same final goal. 
+I strongly advise trying many possible combinations and figure out the best set of steps that provide you with a 
+model that performs well.

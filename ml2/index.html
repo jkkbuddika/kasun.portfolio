@@ -8,8 +8,8 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/ml2/" /><meta property="og:image" content="/ml2/featured-image.png"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-12-17T21:52:49+08:00" />
-<meta property="article:modified_time" content="2021-12-17T21:52:49+08:00" />
+<meta property="article:published_time" content="2021-12-19T21:52:49+08:00" />
+<meta property="article:modified_time" content="2021-12-19T21:52:49+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="/ml2/featured-image.png"/>
@@ -32,8 +32,8 @@
                             "url": "\/ml2\/featured-image.png",
                             "width":  2260 ,
                             "height":  732 
-                        }],"genre": "posts","keywords": "Bioinformatics, Machine Learning, Tutorials","wordcount":  1807 ,
-        "url": "\/ml2\/","datePublished": "2021-12-17T21:52:49+08:00","dateModified": "2021-12-17T21:52:49+08:00","publisher": {
+                        }],"genre": "posts","keywords": "Bioinformatics, Machine Learning, Tutorials","wordcount":  2212 ,
+        "url": "\/ml2\/","datePublished": "2021-12-19T21:52:49+08:00","dateModified": "2021-12-19T21:52:49+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -82,8 +82,8 @@
         alt="/ml2/featured-image.png"
         title="/ml2/featured-image.png" /></div><div class="single-card" data-image="true"><h2 class="single-title animated flipInX">Data Pre-Processing</h2><div class="post-meta">
                 <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Kasun Buddika</a></span>&nbsp;<span class="post-category">published in <a href="/categories/machine-learning/"><i class="far fa-folder fa-fw"></i>Machine Learning</a></span></div>
-                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-12-17">2021-12-17</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1807 words</span>&nbsp;
-                    <span><i class="far fa-clock fa-fw"></i>&nbsp;9 minutes</span>&nbsp;</div>
+                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-12-19">2021-12-19</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2212 words</span>&nbsp;
+                    <span><i class="far fa-clock fa-fw"></i>&nbsp;11 minutes</span>&nbsp;</div>
             </div>
 
             <hr><div class="details toc" id="toc-static"  data-kept="">
@@ -101,6 +101,7 @@
         <li><a href="#3-taking-care-of-missingnullnan-data">3. Taking care of missing/NULL/NaN data</a></li>
         <li><a href="#4-encoding-categorical-data">4. Encoding categorical data</a></li>
         <li><a href="#5-splitting-the-data-set-into-training-and-test-data">5. Splitting the data set into training and test data</a></li>
+        <li><a href="#6-feature-scaling">6. Feature scaling</a></li>
       </ul>
     </li>
   </ul>
@@ -123,32 +124,35 @@ some of these steps. Now, let&rsquo;s review what these steps are and how to per
 </ol>
 <div class="details admonition note open">
         <div class="details-summary admonition-title">
-            <i class="icon fas fa-pencil-alt fa-fw"></i>Note<i class="details-icon fas fa-angle-right fa-fw"></i>
+            <i class="icon fas fa-pencil-alt fa-fw"></i>Example data set<i class="details-icon fas fa-angle-right fa-fw"></i>
         </div>
         <div class="details-content">
             <div class="admonition-content">To go through these steps, I downloaded one of the most popular data sets from Kaggle (please see
 <a href="https://www.kaggle.com/fedesoriano/heart-failure-prediction" target="_blank" rel="noopener noreffer">here</a> for a detailed description about the data set) and
 modified it a little bit to highlight these steps. The modified data set can be found
-<a href="https://github.com/jkkbuddika/Datasets_ML" target="_blank" rel="noopener noreffer">here</a>.</div>
+<a href="https://raw.githubusercontent.com/jkkbuddika/Datasets_ML/" target="_blank" rel="noopener noreffer">here</a>.</div>
         </div>
     </div>
 <h3 id="1-importing-and-exploring-the-data-set">1. Importing and exploring the data set</h3>
 <p>First step of data pre-processing is importing the data set using Pandas to create a pandas data frame. The following
 code snippet will do just that and display the first five rows of the data frame.</p>
-<div class="details admonition tip open">
+<div class="details admonition abstract">
         <div class="details-summary admonition-title">
-            <i class="icon fas fa-lightbulb fa-fw"></i>Python code block<i class="details-icon fas fa-angle-right fa-fw"></i>
+            <i class="icon fas fa-list-ul fa-fw"></i>Import data set<i class="details-icon fas fa-angle-right fa-fw"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python"><span style="color:#75715e"># import pandas library</span>
-<span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
-
-<span style="color:#75715e"># import the data set</span>
-dataset <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;heart.csv&#39;</span>)
-
-<span style="color:#75715e"># display the first few lines of the data set</span>
-dataset<span style="color:#f92672">.</span>head()
-</code></pre></div><figure><a class="lightgallery" href="/ml2/Image_1.png" title="image" data-thumbnail="/ml2/Image_1.png" data-sub-html="<h2>Data set</h2><p>image</p>">
+            <div class="admonition-content"><pre tabindex="0"><code>import pandas as pd
+dataset = pd.read_csv('https://raw.githubusercontent.com/jkkbuddika/Datasets_ML/main/heart.csv')
+</code></pre></div>
+        </div>
+    </div>
+<div class="details admonition tip">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>Display the first 5 rows of the data set<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><pre tabindex="0"><code>dataset.head()
+</code></pre><figure><a class="lightgallery" href="/ml2/Image_1.png" title="image" data-thumbnail="/ml2/Image_1.png" data-sub-html="<h2>Data set</h2><p>image</p>">
         <img
             class="lazyload"
             src="/svg/loading.min.svg"
@@ -167,14 +171,13 @@ there are columns with categorical data we have to encode this data prior to tra
 idea to quickly assess descriptive statistics of the data set. Pandas makes this easy. Depending on the data set, this
 step alone can provide so much details. As you can see below, some of the numeric variables need to be scaled to
 ensure optimal performance of the final model.</p>
-<div class="details admonition tip open">
+<div class="details admonition tip">
         <div class="details-summary admonition-title">
-            <i class="icon fas fa-lightbulb fa-fw"></i>Python code block<i class="details-icon fas fa-angle-right fa-fw"></i>
+            <i class="icon fas fa-lightbulb fa-fw"></i>Generate descriptive statistics<i class="details-icon fas fa-angle-right fa-fw"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python"><span style="color:#75715e"># generate descriptive statistics</span>
-dataset<span style="color:#f92672">.</span>describe()
-</code></pre></div><figure><a class="lightgallery" href="/ml2/Image_2.png" title="image" data-thumbnail="/ml2/Image_2.png" data-sub-html="<h2>Descriptive statistics of numeric variables</h2><p>image</p>">
+            <div class="admonition-content"><pre tabindex="0"><code>dataset.describe()
+</code></pre><figure><a class="lightgallery" href="/ml2/Image_2.png" title="image" data-thumbnail="/ml2/Image_2.png" data-sub-html="<h2>Descriptive statistics of numeric variables</h2><p>image</p>">
         <img
             class="lazyload"
             src="/svg/loading.min.svg"
@@ -193,16 +196,13 @@ For instance, plotting the <em>Sex</em> column will show the distribution of sex
 column will reveal the age distribution. <strong>Seaborn</strong> is a great data visualization library for this. This is a library
 that is written on top of the popular matplotlib library (see <a href="https://seaborn.pydata.org/index.html" target="_blank" rel="noopener noreffer">here</a> for more
 details).</p>
-<div class="details admonition tip open">
+<div class="details admonition example">
         <div class="details-summary admonition-title">
-            <i class="icon fas fa-lightbulb fa-fw"></i>Python code block<i class="details-icon fas fa-angle-right fa-fw"></i>
+            <i class="icon fas fa-list-ol fa-fw"></i>Plot male/female counts<i class="details-icon fas fa-angle-right fa-fw"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content"><pre tabindex="0"><code># import the seaborn and matplotlib libraries
-import seaborn as sns
+            <div class="admonition-content"><pre tabindex="0"><code>import seaborn as sns
 import matplotlib.pyplot as plt
-
-# plot the male/female counts
 sns.countplot(data=dataset, x='Sex', palette='Dark2')
 plt.show()
 </code></pre><figure><a class="lightgallery" href="/ml2/Image_3.jpg" title="image" data-thumbnail="/ml2/Image_3.jpg" data-sub-html="<h2>Count of males and females in the data set</h2><p>image</p>">
@@ -215,10 +215,17 @@ plt.show()
             alt="/ml2/Image_3.jpg" />
     </a><figcaption class="image-caption">Count of males and females in the data set</figcaption>
     </figure>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># plot a density plot to show age distribution</span>
-sns<span style="color:#f92672">.</span>displot(data<span style="color:#f92672">=</span>dataset, x<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Age&#39;</span>, kde<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;#960018&#39;</span>)
-plt<span style="color:#f92672">.</span>show()
-</code></pre></div><figure><a class="lightgallery" href="/ml2/Image_4.jpg" title="image" data-thumbnail="/ml2/Image_4.jpg" data-sub-html="<h2>Age distribution</h2><p>image</p>">
+</div>
+        </div>
+    </div>
+<div class="details admonition example">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-list-ol fa-fw"></i>Plot age distribution<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><pre tabindex="0"><code>sns.displot(data=dataset, x='Age', kde=True, color='#960018')
+plt.show()
+</code></pre><figure><a class="lightgallery" href="/ml2/Image_4.jpg" title="image" data-thumbnail="/ml2/Image_4.jpg" data-sub-html="<h2>Age distribution</h2><p>image</p>">
         <img
             class="lazyload"
             src="/svg/loading.min.svg"
@@ -235,14 +242,13 @@ plt<span style="color:#f92672">.</span>show()
 your data set contain columns with missing values. We can easily get this information. As you can see below, this
 modified data set contain three columns with missing values. Therefore, we will have to take care of them before
 training a model with this data.</p>
-<div class="details admonition tip open">
+<div class="details admonition tip">
         <div class="details-summary admonition-title">
-            <i class="icon fas fa-lightbulb fa-fw"></i>Python code block<i class="details-icon fas fa-angle-right fa-fw"></i>
+            <i class="icon fas fa-lightbulb fa-fw"></i>Identify columns with missing values<i class="details-icon fas fa-angle-right fa-fw"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># detect missing values</span>
-dataset<span style="color:#f92672">.</span>isnull()<span style="color:#f92672">.</span>sum()
-</code></pre></div><figure><a class="lightgallery" href="/ml2/Image_5.png" title="image" data-thumbnail="/ml2/Image_5.png" data-sub-html="<h2>Sum of rows with missing values</h2><p>image</p>">
+            <div class="admonition-content"><pre tabindex="0"><code>dataset.isnull().sum()
+</code></pre><figure><a class="lightgallery" href="/ml2/Image_5.png" title="image" data-thumbnail="/ml2/Image_5.png" data-sub-html="<h2>Sum of rows with missing values</h2><p>image</p>">
         <img
             class="lazyload"
             src="/svg/loading.min.svg"
@@ -255,6 +261,7 @@ dataset<span style="color:#f92672">.</span>isnull()<span style="color:#f92672">.
 </div>
         </div>
     </div>
+<blockquote>
 <p>I am not going to go through all exploratory analyses you can perform. Here are few important conclusions drawn from
 this initial analysis:</p>
 <ul>
@@ -262,6 +269,7 @@ this initial analysis:</p>
 <li>Numeric variables need to be scaled to ensure optimal model performance.</li>
 <li>There are columns with missing data need to be taken care of.</li>
 </ul>
+</blockquote>
 <h3 id="2-create-matrix-of-features-and-dependent-variable-vector">2. Create matrix of features and dependent variable vector</h3>
 <p>The next step after data import and assessment is separating data into <strong>independent</strong> and <strong>dependent</strong> variable
 vectors. Simply put, the <strong>independent variable vector</strong> (aka <strong>feature vector</strong> or the <strong>matrix of features</strong>) is the
@@ -271,17 +279,23 @@ the data frame represents the dependent variable and independent variables are t
 not know how to do this, please refer to this stackoverflow
 <a href="https://stackoverflow.com/questions/13148429/how-to-change-the-order-of-dataframe-columns" target="_blank" rel="noopener noreffer">thread</a>. In our example
 data set, the dependent variable <em>HeartDisease</em> is in the last column. Therefore, we do not have to rearrange.</p>
-<div class="details admonition tip open">
+<div class="details admonition abstract">
         <div class="details-summary admonition-title">
-            <i class="icon fas fa-lightbulb fa-fw"></i>Python code block<i class="details-icon fas fa-angle-right fa-fw"></i>
+            <i class="icon fas fa-list-ul fa-fw"></i>Create the matrix of features (X) and dependent variable vector (y)<i class="details-icon fas fa-angle-right fa-fw"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># create the matrix of features (X) and dependent variable vector (y)</span>
-X <span style="color:#f92672">=</span> dataset<span style="color:#f92672">.</span>iloc[:, :<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>values
-y <span style="color:#f92672">=</span> dataset<span style="color:#f92672">.</span>iloc[:, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>values
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># print independent variable vector</span>
-print(X)
-</code></pre></div><figure><a class="lightgallery" href="/ml2/Image_6.png" title="image" data-thumbnail="/ml2/Image_6.png" data-sub-html="<h2>Features</h2><p>image</p>">
+            <div class="admonition-content"><pre tabindex="0"><code>X = dataset.iloc[:, :-1].values
+y = dataset.iloc[:, -1].values
+</code></pre></div>
+        </div>
+    </div>
+<div class="details admonition success">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-check-circle fa-fw"></i>Independent variable vector<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><pre tabindex="0"><code>print(X)
+</code></pre><figure><a class="lightgallery" href="/ml2/Image_6.png" title="image" data-thumbnail="/ml2/Image_6.png" data-sub-html="<h2>Features</h2><p>image</p>">
         <img
             class="lazyload"
             src="/svg/loading.min.svg"
@@ -291,9 +305,16 @@ print(X)
             alt="/ml2/Image_6.png" />
     </a><figcaption class="image-caption">Features</figcaption>
     </figure>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># print dependent variable vector</span>
-print(y)
-</code></pre></div><figure><a class="lightgallery" href="/ml2/Image_7.png" title="image" data-thumbnail="/ml2/Image_7.png" data-sub-html="<h2>Dependent variable</h2><p>image</p>">
+</div>
+        </div>
+    </div>
+<div class="details admonition success">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-check-circle fa-fw"></i>Dependent variable vector<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><pre tabindex="0"><code>print(y)
+</code></pre><figure><a class="lightgallery" href="/ml2/Image_7.png" title="image" data-thumbnail="/ml2/Image_7.png" data-sub-html="<h2>Dependent variable</h2><p>image</p>">
         <img
             class="lazyload"
             src="/svg/loading.min.svg"
@@ -326,20 +347,18 @@ categorical values) depending on the data type. One of my favorite ways to do th
 class of <code>sklearn.impute</code> module. You can simply pass the <code>strategy</code> argument specifying the replacement strategy:
 mean, median or mode. All columns with missing data contain numerical values, therefore, let&rsquo;s use the mean to
 replace missing values.</p>
-<div class="details admonition tip open">
+<div class="details admonition abstract">
         <div class="details-summary admonition-title">
-            <i class="icon fas fa-lightbulb fa-fw"></i>Python code block<i class="details-icon fas fa-angle-right fa-fw"></i>
+            <i class="icon fas fa-list-ul fa-fw"></i>Imputation using SimpleImputer class<i class="details-icon fas fa-angle-right fa-fw"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># import required modules</span>
-<span style="color:#f92672">from</span> sklearn.impute <span style="color:#f92672">import</span> SimpleImputer
-<span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+            <div class="admonition-content"><pre tabindex="0"><code>from sklearn.impute import SimpleImputer
+import numpy as np
 
-<span style="color:#75715e"># imputation: replacement strategy &#34;mean&#34;</span>
-imputer <span style="color:#f92672">=</span> SimpleImputer(missing_values<span style="color:#f92672">=</span>np<span style="color:#f92672">.</span>nan, strategy<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;mean&#39;</span>)
-imputer<span style="color:#f92672">.</span>fit(X[:, <span style="color:#ae81ff">3</span>:<span style="color:#ae81ff">5</span>])
-X[:, <span style="color:#ae81ff">3</span>:<span style="color:#ae81ff">5</span>] <span style="color:#f92672">=</span> imputer<span style="color:#f92672">.</span>transform(X[:, <span style="color:#ae81ff">3</span>:<span style="color:#ae81ff">5</span>])
-</code></pre></div></div>
+imputer = SimpleImputer(missing_values=np.nan, strategy='mean')
+imputer.fit(X[:, 3:5])
+X[:, 3:5] = imputer.transform(X[:, 3:5])
+</code></pre></div>
         </div>
     </div>
 <div class="details admonition note open">
@@ -371,14 +390,13 @@ vectors for each category in a categorical variable. For instance, if the catego
 </ol>
 <p>Let&rsquo;s employ label encoding for <em>Sex</em> and one-hot encoding for <em>ChestPainType</em>, so that we can see how each can be
 done. We can use the <code>sklearn.preprocessing</code> module for both of these.</p>
-<div class="details admonition tip open">
+<div class="details admonition warning">
         <div class="details-summary admonition-title">
-            <i class="icon fas fa-lightbulb fa-fw"></i>Python code block<i class="details-icon fas fa-angle-right fa-fw"></i>
+            <i class="icon fas fa-exclamation-triangle fa-fw"></i>Before label encoding<i class="details-icon fas fa-angle-right fa-fw"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># before label encoding</span>
-print(X)
-</code></pre></div><figure><a class="lightgallery" href="/ml2/Image_8.png" title="image" data-thumbnail="/ml2/Image_8.png" data-sub-html="<h2>Before label encoding Sex</h2><p>image</p>">
+            <div class="admonition-content"><pre tabindex="0"><code>print(X)
+</code></pre><figure><a class="lightgallery" href="/ml2/Image_8.png" title="image" data-thumbnail="/ml2/Image_8.png" data-sub-html="<h2>Before label encoding Sex</h2><p>image</p>">
         <img
             class="lazyload"
             src="/svg/loading.min.svg"
@@ -388,13 +406,27 @@ print(X)
             alt="/ml2/Image_8.png" />
     </a><figcaption class="image-caption">Before label encoding Sex</figcaption>
     </figure>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># encoding Sex using LabelEncoder class</span>
-<span style="color:#f92672">from</span> sklearn.preprocessing <span style="color:#f92672">import</span> LabelEncoder
-le <span style="color:#f92672">=</span> LabelEncoder()
-X[:, <span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> le<span style="color:#f92672">.</span>fit_transform(X[:, <span style="color:#ae81ff">1</span>])
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># after label encoding</span>
-print(X)
-</code></pre></div><figure><a class="lightgallery" href="/ml2/Image_9.png" title="image" data-thumbnail="/ml2/Image_9.png" data-sub-html="<h2>After label encoding Sex</h2><p>image</p>">
+</div>
+        </div>
+    </div>
+<div class="details admonition abstract">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-list-ul fa-fw"></i>Encode using LabelEncoder class<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><pre tabindex="0"><code>from sklearn.preprocessing import LabelEncoder
+le = LabelEncoder()
+X[:, 1] = le.fit_transform(X[:, 1])
+</code></pre></div>
+        </div>
+    </div>
+<div class="details admonition success">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-check-circle fa-fw"></i>After label encoding<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><pre tabindex="0"><code>print(X)
+</code></pre><figure><a class="lightgallery" href="/ml2/Image_9.png" title="image" data-thumbnail="/ml2/Image_9.png" data-sub-html="<h2>After label encoding Sex</h2><p>image</p>">
         <img
             class="lazyload"
             src="/svg/loading.min.svg"
@@ -404,14 +436,28 @@ print(X)
             alt="/ml2/Image_9.png" />
     </a><figcaption class="image-caption">After label encoding Sex</figcaption>
     </figure>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># encoding ChestPainType using OneHotEncoder class</span>
-<span style="color:#f92672">from</span> sklearn.compose <span style="color:#f92672">import</span> ColumnTransformer
-<span style="color:#f92672">from</span> sklearn.preprocessing <span style="color:#f92672">import</span> OneHotEncoder
-ct <span style="color:#f92672">=</span> ColumnTransformer(transformers<span style="color:#f92672">=</span>[(<span style="color:#e6db74">&#39;encoder&#39;</span>, OneHotEncoder(), [<span style="color:#ae81ff">2</span>])], remainder<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;passthrough&#39;</span>)
-X <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array(ct<span style="color:#f92672">.</span>fit_transform(X))
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># after one-hot encoding</span>
-print(X)
-</code></pre></div><figure><a class="lightgallery" href="/ml2/Image_10.png" title="image" data-thumbnail="/ml2/Image_10.png" data-sub-html="<h2>After one-hot encoding ChestPainType</h2><p>image</p>">
+</div>
+        </div>
+    </div>
+<div class="details admonition abstract">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-list-ul fa-fw"></i>Encode using OneHotEncoder class<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><pre tabindex="0"><code>from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import OneHotEncoder
+ct = ColumnTransformer(transformers=[('encoder', OneHotEncoder(), [2])], remainder='passthrough')
+X = np.array(ct.fit_transform(X))
+</code></pre></div>
+        </div>
+    </div>
+<div class="details admonition success">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-check-circle fa-fw"></i>After one-hot encoding<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><pre tabindex="0"><code>print(X)
+</code></pre><figure><a class="lightgallery" href="/ml2/Image_10.png" title="image" data-thumbnail="/ml2/Image_10.png" data-sub-html="<h2>After one-hot encoding ChestPainType</h2><p>image</p>">
         <img
             class="lazyload"
             src="/svg/loading.min.svg"
@@ -454,13 +500,101 @@ perform train-test splitting prior to feature scaling, which is the next step of
 avoid information leakage. In other words, if we perform feature scaling prior to splitting we influence test data with
 training data. This can make a poorly performing model a good one. We can use the <code>train_test_split</code> class of the
 <code>sklearn.model_selection</code> module to get this job done. In this example, let&rsquo;s perform a 80:20 split. See below.</p>
-<pre tabindex="0"><code class="language-{" data-lang="{">&lt;p&gt;HTML Document&lt;/p&gt;
-</code></pre></div><div class="post-footer" id="post-footer">
+<div class="details admonition abstract">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-list-ul fa-fw"></i>Train-test split<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><pre tabindex="0"><code>from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 1)
+</code></pre></div>
+        </div>
+    </div>
+<h3 id="6-feature-scaling">6. Feature scaling</h3>
+<p>The last step of data pre-processing is <em>feature scaling</em>. This is a crucial step of data pre-processing. In many
+instances, input data we use for training a model can contain numeric variables/features that spans varying degrees of
+magnitude, range and units. Although some of the algorithms are not sensitive to these discrepancies (<em>i.e.,</em>
+tree-based methods), many are very sensitive to this (<em>i.e.,</em> gradient descent-based and distance-based algorithms).
+Therefore, knowing how to handle this issue is important. There are two common approaches for feature scaling:</p>
+<ol>
+<li>
+<p><strong>Normalization:</strong> Also know as min-max scaling, this technique shifts and rescale values so that they end up
+ranging between 0 and 1. This is a good approach to be used when the values do not follow a Gaussian distribution and
+often used when training KNNs and neural networks. We can use the <code>MinMaxScalar</code> class of the <code>sklearn.preprocessing</code>
+module to perform this task.</p>
+</li>
+<li>
+<p><strong>Standardization:</strong> In this technique, values are centered around the mean with a unit standard deviation. In other
+words, the mean of the attributes become zero and the final resulting distribution has a unite standard deviation. This
+method is used when the values follow a Gaussian distribution (not required to be true). We can use the
+<code>StandardScaler</code> class of the <code>sklearn.preprocessing</code> module to get this task done.</p>
+</li>
+</ol>
+<p>It is always a good idea to train the model following both of these scaling methods and assess which method results in
+a better performing model. I will let you to try and do normalization. Let&rsquo;s use standardization to scale our data.
+During scaling you have the option to include or exclude encoded data. This may or may not affect the overall
+performance of the final model. In this example I will scale everything. Try without scaling encoded data as well.</p>
+<div class="details admonition warning">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-exclamation-triangle fa-fw"></i>Before feature scaling<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><pre tabindex="0"><code>print(X)
+</code></pre><figure><a class="lightgallery" href="/ml2/Image_11.png" title="image" data-thumbnail="/ml2/Image_11.png" data-sub-html="<h2>Before feature scaling</h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="Image_11.png"
+            data-srcset="/ml2/Image_11.png, Image_11.png 1.5x, /ml2/Image_11.png 2x"
+            data-sizes="auto"
+            alt="/ml2/Image_11.png" />
+    </a><figcaption class="image-caption">Before feature scaling</figcaption>
+    </figure>
+</div>
+        </div>
+    </div>
+<div class="details admonition abstract">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-list-ul fa-fw"></i>Standardize feature data using StandardScaler class<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><pre tabindex="0"><code>from sklearn.preprocessing import StandardScaler
+sc = StandardScaler()
+X_train[:, :] = sc.fit_transform(X_train[:, :])
+X_test[:, :] = sc.transform(X_test[:, :])
+</code></pre></div>
+        </div>
+    </div>
+<div class="details admonition success">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-check-circle fa-fw"></i>After feature scaling<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><pre tabindex="0"><code>print(X)
+</code></pre><figure><a class="lightgallery" href="/ml2/Image_12.png" title="image" data-thumbnail="/ml2/Image_12.png" data-sub-html="<h2>After feature scaling</h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="Image_12.png"
+            data-srcset="/ml2/Image_12.png, Image_12.png 1.5x, /ml2/Image_12.png 2x"
+            data-sizes="auto"
+            alt="/ml2/Image_12.png" />
+    </a><figcaption class="image-caption">After feature scaling</figcaption>
+    </figure>
+</div>
+        </div>
+    </div>
+<p>This concludes the data pre-processing phase. In general, data scientists spend most of their time performing these
+steps. I wanted to give you a clear step-wise guide to summarize all you want to know before getting into training a
+model. Please note that depending on the problem you are addressing and the nature of your data set, you will have to
+make alterations to this general scheme. As you have seen, there are multiple ways of achieving the same final goal.
+I strongly advise trying many possible combinations and figure out the best set of steps that provide you with a
+model that performs well.</p></div><div class="post-footer" id="post-footer">
     <div class="post-info"><div class="post-info-tag"><span><a href="/tags/bioinformatics/">Bioinformatics</a>
                 </span><span><a href="/tags/machine-learning/">Machine Learning</a>
                 </span><span><a href="/tags/tutorials/">Tutorials</a>
                 </span></div><div class="post-info-line"><div class="post-info-mod">
-                <span>Updated on 2021-12-17</span>
+                <span>Updated on 2021-12-19</span>
             </div><div class="post-info-mod"><span>
                             <a class="link-to-markdown" href="/ml2/index.md" target="_blank">Read Markdown</a>
                         </span></div>

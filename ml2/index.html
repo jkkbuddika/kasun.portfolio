@@ -107,7 +107,7 @@
   </ul>
 </nav></div>
                 </div><div class="content" id="content"><blockquote>
-<p>The final performance of a machine learning model largely depend on the data that is being used to train the model.
+<p>The final performance of a machine learning model largely depends on the data that is being used to train the model.
 Therefore, data pre-processing can be considered as one of the most important steps in machine learning. Proper data
 pre-processing can convert a poorly performing model to an excellent model. In general, machine learning data
 pre-processing involves few fundamental steps. Depending on input data and the model that is building you may drop
@@ -239,8 +239,8 @@ plt.show()
         </div>
     </div>
 <p>One of the most important steps in data pre-processing is taking care of missing values. This step is needed only when
-your data set contain columns with missing values. We can easily get this information. As you can see below, this
-modified data set contain three columns with missing values. Therefore, we will have to take care of them before
+your data set contains columns with missing values. We can easily get this information. As you can see below, this
+modified data set contains three columns with missing values. Therefore, we will have to take care of them before
 training a model with this data.</p>
 <div class="details admonition tip">
         <div class="details-summary admonition-title">
@@ -275,10 +275,10 @@ this initial analysis:</p>
 vectors. Simply put, the <strong>independent variable vector</strong> (aka <strong>feature vector</strong> or the <strong>matrix of features</strong>) is the
 cause and the <strong>dependent variable vector</strong> represents the effect. The value of the dependent variable is determined
 by the value(s) of independent variable(s). In general, I reorganize the input data frame so that the last column of
-the data frame represents the dependent variable and independent variables are to the left of this. In case if you do
-not know how to do this, please refer to this stackoverflow
+the data frame represents the dependent variable and independent variables are arranged to the left of this. In case
+if you do not know how to do this, please refer to this stackoverflow
 <a href="https://stackoverflow.com/questions/13148429/how-to-change-the-order-of-dataframe-columns" target="_blank" rel="noopener noreffer">thread</a>. In our example
-data set, the dependent variable <em>HeartDisease</em> is in the last column. Therefore, we do not have to rearrange.</p>
+data set, the dependent variable <em>HeartDisease</em> is in the last column. Therefore, we do not have to worry about this.</p>
 <div class="details admonition abstract">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-list-ul fa-fw"></i>Create the matrix of features (X) and dependent variable vector (y)<i class="details-icon fas fa-angle-right fa-fw"></i>
@@ -328,7 +328,7 @@ y = dataset.iloc[:, -1].values
         </div>
     </div>
 <h3 id="3-taking-care-of-missingnullnan-data">3. Taking care of missing/NULL/NaN data</h3>
-<p>Now that we have separated our data set to independent and dependent variables, it is time to move on to next steps.
+<p>Now that we have separated our data set into independent and dependent variables, it is time to move on to next steps.
 As I mentioned above, the modified data set we use had missing values in <em>RestingBP</em>, <em>Cholesterol</em>, and <em>MaxHR</em>
 columns. We need to take care of these before moving on to next steps. Note that you can do this step before step
 2 above. There are few ways you can handle missing data (please note that this is not an exhaustive list):</p>
@@ -337,7 +337,7 @@ columns. We need to take care of these before moving on to next steps. Note that
 <li>Try predicting missing values</li>
 <li>Assign the mean/median/mode value to missing values</li>
 </ol>
-<p>Of these methods the simplest is to remove rows/columns with missing values. We can use the <code>dropna</code> function
+<p>Of these methods, the simplest is to remove rows/columns with missing values. We can use the <code>dropna</code> function
 (<code>axis=0</code> to drop <em>rows</em> or <code>axis=1</code> to drop <em>columns</em> with missing values) of Pandas to achieve this. You have to be
 cautious here as you may unnecessarily lose too much data.</p>
 <p>An effective way of taking care of missing data is assigning a value to missing data. You can use for instance, a
@@ -345,8 +345,8 @@ linear regression or KNN model to predict missing values. This is out of scope f
 Alternatively, missing data can be filled with the value of mean, median (for numerical values) or mode (for
 categorical values) depending on the data type. One of my favorite ways to do this is to use the <code>SimpleImputer</code>
 class of <code>sklearn.impute</code> module. You can simply pass the <code>strategy</code> argument specifying the replacement strategy:
-mean, median or mode. All columns with missing data contain numerical values, therefore, let&rsquo;s use the mean to
-replace missing values.</p>
+mean, median or mode. In our data set, all columns with missing data contain numerical values, therefore, let&rsquo;s use
+mean to replace missing values.</p>
 <div class="details admonition abstract">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-list-ul fa-fw"></i>Imputation using SimpleImputer class<i class="details-icon fas fa-angle-right fa-fw"></i>
@@ -381,12 +381,11 @@ data:</p>
 <li><strong>Ordinal data:</strong> Categories have an inherent order</li>
 <li><strong>Nominal data:</strong> Categories do not have an inherent order</li>
 </ol>
-<p>Likewise, there are many approaches to encode these categorical data. Two very frequently used approches are:</p>
+<p>Likewise, there are many approaches to encode these categorical data. Two very frequently used approaches are:</p>
 <ol>
 <li><strong>Label/Ordinal encoding:</strong> For ordinal categorical features. Each label is converted into an integer value.</li>
-<li><strong>One-hot encoding:</strong> For nominal data (do not have any specific order). This method works by creating binary
-vectors for each category in a categorical variable. For instance, if the categorical variable contain 3 categories,
-3 binary variables are created.</li>
+<li><strong>One-hot encoding:</strong> For nominal data. This method works by creating binary vectors for each category in a
+categorical variable. For instance, if the categorical variable contains 3 categories, 3 binary variables are created.</li>
 </ol>
 <p>Let&rsquo;s employ label encoding for <em>Sex</em> and one-hot encoding for <em>ChestPainType</em>, so that we can see how each can be
 done. We can use the <code>sklearn.preprocessing</code> module for both of these.</p>
@@ -482,7 +481,7 @@ X = np.array(ct.fit_transform(X))
 <h3 id="5-splitting-the-data-set-into-training-and-test-data">5. Splitting the data set into training and test data</h3>
 <p>At this point, we have handled missing values and have successfully encoded categorical variables. The next step of
 pre-processing is splitting the data set into training and test data. The technique, <strong>train-test split</strong> is used to
-evaluate the performance of a machine learning algorithm. This is an essential pre-processing steps when you are
+evaluate the performance of a machine learning algorithm. This is an essential pre-processing step when you are
 dealing with classification and regression problems. This is a very simple step and involves taking a data set and
 dividing it into two subsets:</p>
 <ol>
@@ -491,15 +490,15 @@ dividing it into two subsets:</p>
 </ol>
 <p>Given that the splitting had been done prior to training the model, we can use the test data at the end to let the
 model do predictions and compare these predictions to real values. In theory this is what we eventually want to do with
-the trained model isn&rsquo;t it? Use the model on new data and make predictions. Note that this procedure is appropriate
-when the input data set is sufficiently large. In instances where there&rsquo;s no enough input data, model performance can
+the trained model isn&rsquo;t it? Use the model on new data and make predictions. <em>Note that this procedure is appropriate
+when the input data set is sufficiently large</em>. In instances where there&rsquo;s no enough input data, model performance can
 be evaluated using an approach like <em>K-fold cross validation</em>.</p>
 <p>There is no optimal split. The final split percentage must be chosen based on the objectives of the project. Most
 commonly used percentages include 80:20 or 67:33 training to test split. An important point to make here is that we
 perform train-test splitting prior to feature scaling, which is the next step of data pre-processing. This is simply to
 avoid information leakage. In other words, if we perform feature scaling prior to splitting we influence test data with
-training data. This can make a poorly performing model a good one. We can use the <code>train_test_split</code> class of the
-<code>sklearn.model_selection</code> module to get this job done. In this example, let&rsquo;s perform a 80:20 split. See below.</p>
+training data. This can make a poorly performing model look like a good one. We can use the <code>train_test_split</code> class
+of the <code>sklearn.model_selection</code> module to get this job done. In this example, let&rsquo;s perform a 80:20 split. See below.</p>
 <div class="details admonition abstract">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-list-ul fa-fw"></i>Train-test split<i class="details-icon fas fa-angle-right fa-fw"></i>
@@ -511,21 +510,21 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, rando
         </div>
     </div>
 <h3 id="6-feature-scaling">6. Feature scaling</h3>
-<p>The last step of data pre-processing is <em>feature scaling</em>. This is a crucial step of data pre-processing. In many
-instances, input data we use for training a model can contain numeric variables/features that spans varying degrees of
+<p>The last step of data pre-processing is <em>feature scaling</em> and is a crucial step of data pre-processing. In many
+instances, input data we use for training a model contain numeric variables/features that spans varying degrees of
 magnitude, range and units. Although some of the algorithms are not sensitive to these discrepancies (<em>i.e.,</em>
 tree-based methods), many are very sensitive to this (<em>i.e.,</em> gradient descent-based and distance-based algorithms).
 Therefore, knowing how to handle this issue is important. There are two common approaches for feature scaling:</p>
 <ol>
 <li>
-<p><strong>Normalization:</strong> Also know as min-max scaling, this technique shifts and rescale values so that they end up
+<p><strong>Normalization:</strong> Also know as <em>min-max scaling</em>, this technique shifts and rescale values so that they end up
 ranging between 0 and 1. This is a good approach to be used when the values do not follow a Gaussian distribution and
 often used when training KNNs and neural networks. We can use the <code>MinMaxScalar</code> class of the <code>sklearn.preprocessing</code>
-module to perform this task.</p>
+module to perform normalization.</p>
 </li>
 <li>
 <p><strong>Standardization:</strong> In this technique, values are centered around the mean with a unit standard deviation. In other
-words, the mean of the attributes become zero and the final resulting distribution has a unite standard deviation. This
+words, the mean of the attributes become zero and the final resulting distribution has a unit standard deviation. This
 method is used when the values follow a Gaussian distribution (not required to be true). We can use the
 <code>StandardScaler</code> class of the <code>sklearn.preprocessing</code> module to get this task done.</p>
 </li>

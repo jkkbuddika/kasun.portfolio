@@ -3,7 +3,7 @@
 
 <!--more-->
 
-> The final performance of a machine learning model largely depend on the data that is being used to train the model. 
+> The final performance of a machine learning model largely depends on the data that is being used to train the model. 
 Therefore, data pre-processing can be considered as one of the most important steps in machine learning. Proper data 
 pre-processing can convert a poorly performing model to an excellent model. In general, machine learning data 
 pre-processing involves few fundamental steps. Depending on input data and the model that is building you may drop 
@@ -84,8 +84,8 @@ plt.show()
 {{< /admonition >}}
 
 One of the most important steps in data pre-processing is taking care of missing values. This step is needed only when 
-your data set contain columns with missing values. We can easily get this information. As you can see below, this 
-modified data set contain three columns with missing values. Therefore, we will have to take care of them before 
+your data set contains columns with missing values. We can easily get this information. As you can see below, this 
+modified data set contains three columns with missing values. Therefore, we will have to take care of them before 
 training a model with this data.
 
 {{< admonition tip "Identify columns with missing values" false >}}
@@ -107,10 +107,10 @@ The next step after data import and assessment is separating data into **indepen
 vectors. Simply put, the **independent variable vector** (aka **feature vector** or the **matrix of features**) is the 
 cause and the **dependent variable vector** represents the effect. The value of the dependent variable is determined 
 by the value(s) of independent variable(s). In general, I reorganize the input data frame so that the last column of 
-the data frame represents the dependent variable and independent variables are to the left of this. In case if you do 
-not know how to do this, please refer to this stackoverflow 
+the data frame represents the dependent variable and independent variables are arranged to the left of this. In case 
+if you do not know how to do this, please refer to this stackoverflow 
 [thread](https://stackoverflow.com/questions/13148429/how-to-change-the-order-of-dataframe-columns). In our example 
-data set, the dependent variable *HeartDisease* is in the last column. Therefore, we do not have to rearrange. 
+data set, the dependent variable *HeartDisease* is in the last column. Therefore, we do not have to worry about this. 
 
 {{< admonition abstract "Create the matrix of features (X) and dependent variable vector (y)" false >}}
 ```
@@ -135,7 +135,7 @@ print(y)
 
 ### 3. Taking care of missing/NULL/NaN data
 
-Now that we have separated our data set to independent and dependent variables, it is time to move on to next steps. 
+Now that we have separated our data set into independent and dependent variables, it is time to move on to next steps. 
 As I mentioned above, the modified data set we use had missing values in *RestingBP*, *Cholesterol*, and *MaxHR* 
 columns. We need to take care of these before moving on to next steps. Note that you can do this step before step 
 2 above. There are few ways you can handle missing data (please note that this is not an exhaustive list):
@@ -144,7 +144,7 @@ columns. We need to take care of these before moving on to next steps. Note that
 2. Try predicting missing values
 3. Assign the mean/median/mode value to missing values
 
-Of these methods the simplest is to remove rows/columns with missing values. We can use the `dropna` function 
+Of these methods, the simplest is to remove rows/columns with missing values. We can use the `dropna` function 
 (`axis=0` to drop *rows* or `axis=1` to drop *columns* with missing values) of Pandas to achieve this. You have to be 
 cautious here as you may unnecessarily lose too much data. 
 
@@ -153,8 +153,8 @@ linear regression or KNN model to predict missing values. This is out of scope f
 Alternatively, missing data can be filled with the value of mean, median (for numerical values) or mode (for 
 categorical values) depending on the data type. One of my favorite ways to do this is to use the `SimpleImputer` 
 class of `sklearn.impute` module. You can simply pass the `strategy` argument specifying the replacement strategy: 
-mean, median or mode. All columns with missing data contain numerical values, therefore, let's use the mean to 
-replace missing values.
+mean, median or mode. In our data set, all columns with missing data contain numerical values, therefore, let's use 
+mean to replace missing values.
 
 {{< admonition abstract "Imputation using SimpleImputer class" false >}}
 ```
@@ -184,12 +184,11 @@ data:
 1. **Ordinal data:** Categories have an inherent order
 2. **Nominal data:** Categories do not have an inherent order
 
-Likewise, there are many approaches to encode these categorical data. Two very frequently used approches are:
+Likewise, there are many approaches to encode these categorical data. Two very frequently used approaches are:
 
 1. **Label/Ordinal encoding:** For ordinal categorical features. Each label is converted into an integer value.
-2. **One-hot encoding:** For nominal data (do not have any specific order). This method works by creating binary 
-vectors for each category in a categorical variable. For instance, if the categorical variable contain 3 categories, 
-3 binary variables are created.
+2. **One-hot encoding:** For nominal data. This method works by creating binary vectors for each category in a 
+categorical variable. For instance, if the categorical variable contains 3 categories, 3 binary variables are created.
 
 Let's employ label encoding for *Sex* and one-hot encoding for *ChestPainType*, so that we can see how each can be 
 done. We can use the `sklearn.preprocessing` module for both of these.
@@ -241,7 +240,7 @@ If you want to read more about other available approaches, please refer to this 
 
 At this point, we have handled missing values and have successfully encoded categorical variables. The next step of 
 pre-processing is splitting the data set into training and test data. The technique, **train-test split** is used to 
-evaluate the performance of a machine learning algorithm. This is an essential pre-processing steps when you are 
+evaluate the performance of a machine learning algorithm. This is an essential pre-processing step when you are 
 dealing with classification and regression problems. This is a very simple step and involves taking a data set and 
 dividing it into two subsets:
 
@@ -250,16 +249,16 @@ dividing it into two subsets:
 
 Given that the splitting had been done prior to training the model, we can use the test data at the end to let the 
 model do predictions and compare these predictions to real values. In theory this is what we eventually want to do with 
-the trained model isn't it? Use the model on new data and make predictions. Note that this procedure is appropriate 
-when the input data set is sufficiently large. In instances where there's no enough input data, model performance can 
+the trained model isn't it? Use the model on new data and make predictions. *Note that this procedure is appropriate 
+when the input data set is sufficiently large*. In instances where there's no enough input data, model performance can 
 be evaluated using an approach like *K-fold cross validation*.
 
 There is no optimal split. The final split percentage must be chosen based on the objectives of the project. Most 
 commonly used percentages include 80:20 or 67:33 training to test split. An important point to make here is that we 
 perform train-test splitting prior to feature scaling, which is the next step of data pre-processing. This is simply to 
 avoid information leakage. In other words, if we perform feature scaling prior to splitting we influence test data with 
-training data. This can make a poorly performing model a good one. We can use the `train_test_split` class of the 
-`sklearn.model_selection` module to get this job done. In this example, let's perform a 80:20 split. See below.
+training data. This can make a poorly performing model look like a good one. We can use the `train_test_split` class 
+of the `sklearn.model_selection` module to get this job done. In this example, let's perform a 80:20 split. See below.
 
 {{< admonition abstract "Train-test split" false >}}
 ```
@@ -270,19 +269,19 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, rando
 
 ### 6. Feature scaling
 
-The last step of data pre-processing is *feature scaling*. This is a crucial step of data pre-processing. In many 
-instances, input data we use for training a model can contain numeric variables/features that spans varying degrees of 
+The last step of data pre-processing is *feature scaling* and is a crucial step of data pre-processing. In many 
+instances, input data we use for training a model contain numeric variables/features that spans varying degrees of 
 magnitude, range and units. Although some of the algorithms are not sensitive to these discrepancies (*i.e.,* 
 tree-based methods), many are very sensitive to this (*i.e.,* gradient descent-based and distance-based algorithms). 
 Therefore, knowing how to handle this issue is important. There are two common approaches for feature scaling:
 
-1. **Normalization:** Also know as min-max scaling, this technique shifts and rescale values so that they end up 
+1. **Normalization:** Also know as *min-max scaling*, this technique shifts and rescale values so that they end up 
 ranging between 0 and 1. This is a good approach to be used when the values do not follow a Gaussian distribution and 
 often used when training KNNs and neural networks. We can use the `MinMaxScalar` class of the `sklearn.preprocessing` 
-module to perform this task.
+module to perform normalization.
 
 2. **Standardization:** In this technique, values are centered around the mean with a unit standard deviation. In other 
-words, the mean of the attributes become zero and the final resulting distribution has a unite standard deviation. This 
+words, the mean of the attributes become zero and the final resulting distribution has a unit standard deviation. This 
 method is used when the values follow a Gaussian distribution (not required to be true). We can use the 
 `StandardScaler` class of the `sklearn.preprocessing` module to get this task done.
 

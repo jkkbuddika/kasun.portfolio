@@ -7,12 +7,12 @@ I started getting myself familiarized with machine learning in the last couple o
 I will try to organize and summarize the things I learnt. Subsequent posts will also present final outcomes of few 
 exciting projects I have completed. Let's get started.
 
-### **What is Machine learning?**
+### What is Machine learning?
 
 *Machine learning* is a branch of artificial intelligence that is based on the notion that systems can learn from data, 
 identify patterns and make predictions/decisions with minimal human intervention.
 
-### **Machine learning classification**
+### Machine learning classification
 
 There are **four** basic types:
 
@@ -25,7 +25,7 @@ The final choice of the approach depends on what type of data you are dealing wi
 three core components: *representation*, *evaluation*, and *optimization* (most relevant for supervised learning). 
 Let's understand what each of these approaches mean.
 
-### **1. Supervised learning**
+### 1. Supervised learning
 
 In this method, a data scientist supplies an algorithm with labeled training data, define variables to assess for 
 correlations and matching output values. In other words, a data scientist teach a machine using examples. While 
@@ -55,7 +55,7 @@ The following table shows most frequently used algorithms in each of these class
 | Decision tree classification   | Random forest regression         |
 | Random forest classification   |                                  |
 
-### **2. Unsupervised learning**
+### 2. Unsupervised learning
 
 As the name implies, this mode of machine learning does not require data to be pre-labeled. Algorithms in this class 
 can sift through data to identify patterns that then can be used to categorize data into different classes. These 
@@ -86,7 +86,7 @@ Following table shows most frequently used algorithms in each of these classes:
 | Hierarchical clustering  | Eclat algorithm           | Singular value decomposition (SVD) |
 | Probabilistic clustering |                           | Autoencoders                       |
 
-### **3. Semi-supervised learning**
+### 3. Semi-supervised learning
 
 This machine learning method combines features of supervised and unsupervised learning. In this method, the model is 
 built using both labelled and unlabelled data. In many applications, annotating data is cumbersome. In this method, the 
@@ -95,7 +95,7 @@ imagine, semi-supervised learning strikes a middle ground between the performanc
 efficiency of unsupervised learning. Few areas that benefits from these methods include machine translation, fraud 
 detection and labelling data.
 
-### **4. Reinforcement learning**
+### 4. Reinforcement learning
 
 This learning method is often used for robotics, gaming and navigation. With reinforcement learning, the algorithm 
 discovers through trial and error which actions yield the greatest rewards. There are three primary components of 

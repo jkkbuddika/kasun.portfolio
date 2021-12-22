@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Data Pre-Processing - Personal Portfolio</title><meta name="description" content=""><meta property="og:title" content="Data Pre-Processing" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/ml2/" /><meta property="og:image" content="/ml2/featured-image.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-12-17T21:52:49+08:00" />
+<meta property="article:modified_time" content="2021-12-17T21:52:49+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/ml2/featured-image.png"/>
+<meta name="twitter:title" content="Data Pre-Processing"/>
+<meta name="twitter:description" content=""/>
+<meta name="application-name" content="Personal Portfolio">
+<meta name="apple-mobile-web-app-title" content="Personal Portfolio"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="/ml2/" /><link rel="prev" href="/ml1/" /><link rel="stylesheet" href="/css/page.min.css"><link rel="stylesheet" href="/css/home.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Data Pre-Processing",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "\/ml2\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "\/ml2\/featured-image.png",
+                            "width":  2260 ,
+                            "height":  732 
+                        }],"genre": "posts","keywords": "Bioinformatics, Machine Learning, Tutorials","wordcount":  1807 ,
+        "url": "\/ml2\/","datePublished": "2021-12-17T21:52:49+08:00","dateModified": "2021-12-17T21:52:49+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Kasun Buddika"
+            },"description": ""
+    }
+    </script></head><body data-header-desktop="" data-header-mobile=""><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Personal Portfolio">Kasun Buddika</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/gallery/"> Gallery </a><a class="menu-item" href="/about/"> About </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Personal Portfolio">Kasun Buddika</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/gallery/" title="">Gallery</a><a class="menu-item" href="/about/" title="">About</a><div class="menu-item"><a href="javascript:void(0);" class="theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single" data-toc="enable"><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/ml2/featured-image.png"
+        data-srcset="/ml2/featured-image.png, /ml2/featured-image.png 1.5x, /ml2/featured-image.png 2x"
+        data-sizes="auto"
+        alt="/ml2/featured-image.png"
+        title="/ml2/featured-image.png" /></div><div class="single-card" data-image="true"><h2 class="single-title animated flipInX">Data Pre-Processing</h2><div class="post-meta">
+                <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Kasun Buddika</a></span>&nbsp;<span class="post-category">published in <a href="/categories/machine-learning/"><i class="far fa-folder fa-fw"></i>Machine Learning</a></span></div>
+                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-12-17">2021-12-17</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1807 words</span>&nbsp;
+                    <span><i class="far fa-clock fa-fw"></i>&nbsp;9 minutes</span>&nbsp;</div>
+            </div>
+
+            <hr><div class="details toc" id="toc-static"  data-kept="">
+                    <div class="details-summary toc-title">
+                        <span>Contents</span>
+                        <span><i class="details-icon fas fa-angle-right"></i></span>
+                    </div>
+                    <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#steps-of-data-pre-processing">Steps of data pre-processing</a></li>
+        <li><a href="#1-importing-and-exploring-the-data-set">1. Importing and exploring the data set</a></li>
+        <li><a href="#2-create-matrix-of-features-and-dependent-variable-vector">2. Create matrix of features and dependent variable vector</a></li>
+        <li><a href="#3-taking-care-of-missingnullnan-data">3. Taking care of missing/NULL/NaN data</a></li>
+        <li><a href="#4-encoding-categorical-data">4. Encoding categorical data</a></li>
+        <li><a href="#5-splitting-the-data-set-into-training-and-test-data">5. Splitting the data set into training and test data</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+                </div><div class="content" id="content"><blockquote>
+<p>The final performance of a machine learning model largely depend on the data that is being used to train the model.
+Therefore, data pre-processing can be considered as one of the most important steps in machine learning. Proper data
+pre-processing can convert a poorly performing model to an excellent model. In general, machine learning data
+pre-processing involves few fundamental steps. Depending on input data and the model that is building you may drop
+some of these steps. Now, let&rsquo;s review what these steps are and how to perform them using Python.</p>
+</blockquote>
+<h3 id="steps-of-data-pre-processing">Steps of data pre-processing</h3>
+<ol>
+<li>Importing and exploring the data set</li>
+<li>Generate matrix of features and dependent variable vector</li>
+<li>Taking care of missing/NULL/NaN data</li>
+<li>Encoding categorical data</li>
+<li>Splitting the data set into training and test data</li>
+<li>Feature scaling</li>
+</ol>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>Note<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">To go through these steps, I downloaded one of the most popular data sets from Kaggle (please see
+<a href="https://www.kaggle.com/fedesoriano/heart-failure-prediction" target="_blank" rel="noopener noreffer">here</a> for a detailed description about the data set) and
+modified it a little bit to highlight these steps. The modified data set can be found
+<a href="https://github.com/jkkbuddika/Datasets_ML" target="_blank" rel="noopener noreffer">here</a>.</div>
+        </div>
+    </div>
+<h3 id="1-importing-and-exploring-the-data-set">1. Importing and exploring the data set</h3>
+<p>First step of data pre-processing is importing the data set using Pandas to create a pandas data frame. The following
+code snippet will do just that and display the first five rows of the data frame.</p>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>Python code block<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python"><span style="color:#75715e"># import pandas library</span>
+<span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+
+<span style="color:#75715e"># import the data set</span>
+dataset <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;heart.csv&#39;</span>)
+
+<span style="color:#75715e"># display the first few lines of the data set</span>
+dataset<span style="color:#f92672">.</span>head()
+</code></pre></div><figure><a class="lightgallery" href="/ml2/Image_1.png" title="image" data-thumbnail="/ml2/Image_1.png" data-sub-html="<h2>Data set</h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="Image_1.png"
+            data-srcset="/ml2/Image_1.png, Image_1.png 1.5x, /ml2/Image_1.png 2x"
+            data-sizes="auto"
+            alt="/ml2/Image_1.png" />
+    </a><figcaption class="image-caption">Data set</figcaption>
+    </figure>
+</div>
+        </div>
+    </div>
+<p>As you can see, the data set contains a total of seven columns, two of which are categorical. The last column,
+<em>HeartDisease</em>, indicates whether each patient (each row) has gotten cardiovascular disease (CVD) or not. Because
+there are columns with categorical data we have to encode this data prior to training a model. It is also not a bad
+idea to quickly assess descriptive statistics of the data set. Pandas makes this easy. Depending on the data set, this
+step alone can provide so much details. As you can see below, some of the numeric variables need to be scaled to
+ensure optimal performance of the final model.</p>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>Python code block<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Python" data-lang="Python"><span style="color:#75715e"># generate descriptive statistics</span>
+dataset<span style="color:#f92672">.</span>describe()
+</code></pre></div><figure><a class="lightgallery" href="/ml2/Image_2.png" title="image" data-thumbnail="/ml2/Image_2.png" data-sub-html="<h2>Descriptive statistics of numeric variables</h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="Image_2.png"
+            data-srcset="/ml2/Image_2.png, Image_2.png 1.5x, /ml2/Image_2.png 2x"
+            data-sizes="auto"
+            alt="/ml2/Image_2.png" />
+    </a><figcaption class="image-caption">Descriptive statistics of numeric variables</figcaption>
+    </figure>
+</div>
+        </div>
+    </div>
+<p>Although it is not required, I like to visualize data. Visualizations some times can tell you things that numbers
+cannot. There are many ways of doing this and different visualizations will tell different stories about your data set.
+For instance, plotting the <em>Sex</em> column will show the distribution of sex ratio in the data set, and plotting the <em>Age</em>
+column will reveal the age distribution. <strong>Seaborn</strong> is a great data visualization library for this. This is a library
+that is written on top of the popular matplotlib library (see <a href="https://seaborn.pydata.org/index.html" target="_blank" rel="noopener noreffer">here</a> for more
+details).</p>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>Python code block<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><pre tabindex="0"><code># import the seaborn and matplotlib libraries
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# plot the male/female counts
+sns.countplot(data=dataset, x='Sex', palette='Dark2')
+plt.show()
+</code></pre><figure><a class="lightgallery" href="/ml2/Image_3.jpg" title="image" data-thumbnail="/ml2/Image_3.jpg" data-sub-html="<h2>Count of males and females in the data set</h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="Image_3.jpg"
+            data-srcset="/ml2/Image_3.jpg, Image_3.jpg 1.5x, /ml2/Image_3.jpg 2x"
+            data-sizes="auto"
+            alt="/ml2/Image_3.jpg" />
+    </a><figcaption class="image-caption">Count of males and females in the data set</figcaption>
+    </figure>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># plot a density plot to show age distribution</span>
+sns<span style="color:#f92672">.</span>displot(data<span style="color:#f92672">=</span>dataset, x<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Age&#39;</span>, kde<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;#960018&#39;</span>)
+plt<span style="color:#f92672">.</span>show()
+</code></pre></div><figure><a class="lightgallery" href="/ml2/Image_4.jpg" title="image" data-thumbnail="/ml2/Image_4.jpg" data-sub-html="<h2>Age distribution</h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="Image_4.jpg"
+            data-srcset="/ml2/Image_4.jpg, Image_4.jpg 1.5x, /ml2/Image_4.jpg 2x"
+            data-sizes="auto"
+            alt="/ml2/Image_4.jpg" />
+    </a><figcaption class="image-caption">Age distribution</figcaption>
+    </figure>
+</div>
+        </div>
+    </div>
+<p>One of the most important steps in data pre-processing is taking care of missing values. This step is needed only when
+your data set contain columns with missing values. We can easily get this information. As you can see below, this
+modified data set contain three columns with missing values. Therefore, we will have to take care of them before
+training a model with this data.</p>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>Python code block<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># detect missing values</span>
+dataset<span style="color:#f92672">.</span>isnull()<span style="color:#f92672">.</span>sum()
+</code></pre></div><figure><a class="lightgallery" href="/ml2/Image_5.png" title="image" data-thumbnail="/ml2/Image_5.png" data-sub-html="<h2>Sum of rows with missing values</h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="Image_5.png"
+            data-srcset="/ml2/Image_5.png, Image_5.png 1.5x, /ml2/Image_5.png 2x"
+            data-sizes="auto"
+            alt="/ml2/Image_5.png" />
+    </a><figcaption class="image-caption">Sum of rows with missing values</figcaption>
+    </figure>
+</div>
+        </div>
+    </div>
+<p>I am not going to go through all exploratory analyses you can perform. Here are few important conclusions drawn from
+this initial analysis:</p>
+<ul>
+<li>The data set contain categorical data and needs to be encoded.</li>
+<li>Numeric variables need to be scaled to ensure optimal model performance.</li>
+<li>There are columns with missing data need to be taken care of.</li>
+</ul>
+<h3 id="2-create-matrix-of-features-and-dependent-variable-vector">2. Create matrix of features and dependent variable vector</h3>
+<p>The next step after data import and assessment is separating data into <strong>independent</strong> and <strong>dependent</strong> variable
+vectors. Simply put, the <strong>independent variable vector</strong> (aka <strong>feature vector</strong> or the <strong>matrix of features</strong>) is the
+cause and the <strong>dependent variable vector</strong> represents the effect. The value of the dependent variable is determined
+by the value(s) of independent variable(s). In general, I reorganize the input data frame so that the last column of
+the data frame represents the dependent variable and independent variables are to the left of this. In case if you do
+not know how to do this, please refer to this stackoverflow
+<a href="https://stackoverflow.com/questions/13148429/how-to-change-the-order-of-dataframe-columns" target="_blank" rel="noopener noreffer">thread</a>. In our example
+data set, the dependent variable <em>HeartDisease</em> is in the last column. Therefore, we do not have to rearrange.</p>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>Python code block<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># create the matrix of features (X) and dependent variable vector (y)</span>
+X <span style="color:#f92672">=</span> dataset<span style="color:#f92672">.</span>iloc[:, :<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>values
+y <span style="color:#f92672">=</span> dataset<span style="color:#f92672">.</span>iloc[:, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>values
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># print independent variable vector</span>
+print(X)
+</code></pre></div><figure><a class="lightgallery" href="/ml2/Image_6.png" title="image" data-thumbnail="/ml2/Image_6.png" data-sub-html="<h2>Features</h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="Image_6.png"
+            data-srcset="/ml2/Image_6.png, Image_6.png 1.5x, /ml2/Image_6.png 2x"
+            data-sizes="auto"
+            alt="/ml2/Image_6.png" />
+    </a><figcaption class="image-caption">Features</figcaption>
+    </figure>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># print dependent variable vector</span>
+print(y)
+</code></pre></div><figure><a class="lightgallery" href="/ml2/Image_7.png" title="image" data-thumbnail="/ml2/Image_7.png" data-sub-html="<h2>Dependent variable</h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="Image_7.png"
+            data-srcset="/ml2/Image_7.png, Image_7.png 1.5x, /ml2/Image_7.png 2x"
+            data-sizes="auto"
+            alt="/ml2/Image_7.png" />
+    </a><figcaption class="image-caption">Dependent variable</figcaption>
+    </figure>
+</div>
+        </div>
+    </div>
+<h3 id="3-taking-care-of-missingnullnan-data">3. Taking care of missing/NULL/NaN data</h3>
+<p>Now that we have separated our data set to independent and dependent variables, it is time to move on to next steps.
+As I mentioned above, the modified data set we use had missing values in <em>RestingBP</em>, <em>Cholesterol</em>, and <em>MaxHR</em>
+columns. We need to take care of these before moving on to next steps. Note that you can do this step before step
+2 above. There are few ways you can handle missing data (please note that this is not an exhaustive list):</p>
+<ol>
+<li>Remove rows/columns with missing values</li>
+<li>Try predicting missing values</li>
+<li>Assign the mean/median/mode value to missing values</li>
+</ol>
+<p>Of these methods the simplest is to remove rows/columns with missing values. We can use the <code>dropna</code> function
+(<code>axis=0</code> to drop <em>rows</em> or <code>axis=1</code> to drop <em>columns</em> with missing values) of Pandas to achieve this. You have to be
+cautious here as you may unnecessarily lose too much data.</p>
+<p>An effective way of taking care of missing data is assigning a value to missing data. You can use for instance, a
+linear regression or KNN model to predict missing values. This is out of scope for this particular blog post.
+Alternatively, missing data can be filled with the value of mean, median (for numerical values) or mode (for
+categorical values) depending on the data type. One of my favorite ways to do this is to use the <code>SimpleImputer</code>
+class of <code>sklearn.impute</code> module. You can simply pass the <code>strategy</code> argument specifying the replacement strategy:
+mean, median or mode. All columns with missing data contain numerical values, therefore, let&rsquo;s use the mean to
+replace missing values.</p>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>Python code block<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># import required modules</span>
+<span style="color:#f92672">from</span> sklearn.impute <span style="color:#f92672">import</span> SimpleImputer
+<span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+
+<span style="color:#75715e"># imputation: replacement strategy &#34;mean&#34;</span>
+imputer <span style="color:#f92672">=</span> SimpleImputer(missing_values<span style="color:#f92672">=</span>np<span style="color:#f92672">.</span>nan, strategy<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;mean&#39;</span>)
+imputer<span style="color:#f92672">.</span>fit(X[:, <span style="color:#ae81ff">3</span>:<span style="color:#ae81ff">5</span>])
+X[:, <span style="color:#ae81ff">3</span>:<span style="color:#ae81ff">5</span>] <span style="color:#f92672">=</span> imputer<span style="color:#f92672">.</span>transform(X[:, <span style="color:#ae81ff">3</span>:<span style="color:#ae81ff">5</span>])
+</code></pre></div></div>
+        </div>
+    </div>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>Additional Reading<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">If you want to read more about handling missing data, refer to this detailed blog
+<a href="https://towardsdatascience.com/7-ways-to-handle-missing-values-in-machine-learning-1a6326adf79e" target="_blank" rel="noopener noreffer">post</a> on medium.</div>
+        </div>
+    </div>
+<h3 id="4-encoding-categorical-data">4. Encoding categorical data</h3>
+<p>If the input data set contains categorical data, we have to take care of them before training a machine learning
+model. Categorical data is simply information aggregated into groups rather than being in numeric formats (<em>i.e.,</em>
+Sex and ChestPainType from our example data set). Categorical data present in almost all real-life data sets (in both
+independent and dependent variables), however, current algorithms still struggle to deal with them (<em>i.e.,</em> trying to
+train a model without encoding categorical data will immediately output an error). There are two types of categorical
+data:</p>
+<ol>
+<li><strong>Ordinal data:</strong> Categories have an inherent order</li>
+<li><strong>Nominal data:</strong> Categories do not have an inherent order</li>
+</ol>
+<p>Likewise, there are many approaches to encode these categorical data. Two very frequently used approches are:</p>
+<ol>
+<li><strong>Label/Ordinal encoding:</strong> For ordinal categorical features. Each label is converted into an integer value.</li>
+<li><strong>One-hot encoding:</strong> For nominal data (do not have any specific order). This method works by creating binary
+vectors for each category in a categorical variable. For instance, if the categorical variable contain 3 categories,
+3 binary variables are created.</li>
+</ol>
+<p>Let&rsquo;s employ label encoding for <em>Sex</em> and one-hot encoding for <em>ChestPainType</em>, so that we can see how each can be
+done. We can use the <code>sklearn.preprocessing</code> module for both of these.</p>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>Python code block<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># before label encoding</span>
+print(X)
+</code></pre></div><figure><a class="lightgallery" href="/ml2/Image_8.png" title="image" data-thumbnail="/ml2/Image_8.png" data-sub-html="<h2>Before label encoding Sex</h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="Image_8.png"
+            data-srcset="/ml2/Image_8.png, Image_8.png 1.5x, /ml2/Image_8.png 2x"
+            data-sizes="auto"
+            alt="/ml2/Image_8.png" />
+    </a><figcaption class="image-caption">Before label encoding Sex</figcaption>
+    </figure>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># encoding Sex using LabelEncoder class</span>
+<span style="color:#f92672">from</span> sklearn.preprocessing <span style="color:#f92672">import</span> LabelEncoder
+le <span style="color:#f92672">=</span> LabelEncoder()
+X[:, <span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> le<span style="color:#f92672">.</span>fit_transform(X[:, <span style="color:#ae81ff">1</span>])
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># after label encoding</span>
+print(X)
+</code></pre></div><figure><a class="lightgallery" href="/ml2/Image_9.png" title="image" data-thumbnail="/ml2/Image_9.png" data-sub-html="<h2>After label encoding Sex</h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="Image_9.png"
+            data-srcset="/ml2/Image_9.png, Image_9.png 1.5x, /ml2/Image_9.png 2x"
+            data-sizes="auto"
+            alt="/ml2/Image_9.png" />
+    </a><figcaption class="image-caption">After label encoding Sex</figcaption>
+    </figure>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># encoding ChestPainType using OneHotEncoder class</span>
+<span style="color:#f92672">from</span> sklearn.compose <span style="color:#f92672">import</span> ColumnTransformer
+<span style="color:#f92672">from</span> sklearn.preprocessing <span style="color:#f92672">import</span> OneHotEncoder
+ct <span style="color:#f92672">=</span> ColumnTransformer(transformers<span style="color:#f92672">=</span>[(<span style="color:#e6db74">&#39;encoder&#39;</span>, OneHotEncoder(), [<span style="color:#ae81ff">2</span>])], remainder<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;passthrough&#39;</span>)
+X <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array(ct<span style="color:#f92672">.</span>fit_transform(X))
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># after one-hot encoding</span>
+print(X)
+</code></pre></div><figure><a class="lightgallery" href="/ml2/Image_10.png" title="image" data-thumbnail="/ml2/Image_10.png" data-sub-html="<h2>After one-hot encoding ChestPainType</h2><p>image</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="Image_10.png"
+            data-srcset="/ml2/Image_10.png, Image_10.png 1.5x, /ml2/Image_10.png 2x"
+            data-sizes="auto"
+            alt="/ml2/Image_10.png" />
+    </a><figcaption class="image-caption">After one-hot encoding ChestPainType</figcaption>
+    </figure>
+</div>
+        </div>
+    </div>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>Additional Reading<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">If you want to read more about other available approaches, please refer to this blog
+<a href="https://analyticsindiamag.com/a-complete-guide-to-categorical-data-encoding/" target="_blank" rel="noopener noreffer">post</a>.</div>
+        </div>
+    </div>
+<h3 id="5-splitting-the-data-set-into-training-and-test-data">5. Splitting the data set into training and test data</h3>
+<p>At this point, we have handled missing values and have successfully encoded categorical variables. The next step of
+pre-processing is splitting the data set into training and test data. The technique, <strong>train-test split</strong> is used to
+evaluate the performance of a machine learning algorithm. This is an essential pre-processing steps when you are
+dealing with classification and regression problems. This is a very simple step and involves taking a data set and
+dividing it into two subsets:</p>
+<ol>
+<li><strong>Training data set:</strong> Used to fit the model</li>
+<li><strong>Test data set:</strong> Used to evaluate the performance of the model</li>
+</ol>
+<p>Given that the splitting had been done prior to training the model, we can use the test data at the end to let the
+model do predictions and compare these predictions to real values. In theory this is what we eventually want to do with
+the trained model isn&rsquo;t it? Use the model on new data and make predictions. Note that this procedure is appropriate
+when the input data set is sufficiently large. In instances where there&rsquo;s no enough input data, model performance can
+be evaluated using an approach like <em>K-fold cross validation</em>.</p>
+<p>There is no optimal split. The final split percentage must be chosen based on the objectives of the project. Most
+commonly used percentages include 80:20 or 67:33 training to test split. An important point to make here is that we
+perform train-test splitting prior to feature scaling, which is the next step of data pre-processing. This is simply to
+avoid information leakage. In other words, if we perform feature scaling prior to splitting we influence test data with
+training data. This can make a poorly performing model a good one. We can use the <code>train_test_split</code> class of the
+<code>sklearn.model_selection</code> module to get this job done. In this example, let&rsquo;s perform a 80:20 split. See below.</p>
+<pre tabindex="0"><code class="language-{" data-lang="{">&lt;p&gt;HTML Document&lt;/p&gt;
+</code></pre></div><div class="post-footer" id="post-footer">
+    <div class="post-info"><div class="post-info-tag"><span><a href="/tags/bioinformatics/">Bioinformatics</a>
+                </span><span><a href="/tags/machine-learning/">Machine Learning</a>
+                </span><span><a href="/tags/tutorials/">Tutorials</a>
+                </span></div><div class="post-info-line"><div class="post-info-mod">
+                <span>Updated on 2021-12-17</span>
+            </div><div class="post-info-mod"><span>
+                            <a class="link-to-markdown" href="/ml2/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+        </div></div><div class="post-nav"><a href="/ml1/" class="prev" rel="prev" title="Introduction to Machine Learning"><i class="fas fa-angle-left fa-fw"></i>Previous Post</a></div></div>
+</div><div id="disqus_thread"></div>
+<style>
+    div#disqus_thread {
+    margin-top: 12px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 12px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;;
+}
+</style>
+<script>
+    (function() { 
+    var d = document, s = d.createElement('script');
+    s.src = 'https://www-kasunbuddika-com.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></article></div>
+            </main>
+            <footer class="footer"><div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.89.4">Hugo</a> | Theme - <a href="https://github.com/khusika/FeelIt" target="_blank" rel="noopener noreffer" title="FeelIt 1.0.1">FeelIt</a>
+        </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/">By Kasun Buddika</a></span></div>
+</div>
+</footer>
+        </div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-chevron-up fa-fw"></i>
+            </a></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.1-beta.0/dist/css/lightgallery.min.css"><script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.1-beta.0/dist/js/lightgallery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.3.0/dist/lg-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js"></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true}};</script><script src="/js/theme.min.js"></script></body></html>

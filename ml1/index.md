@@ -3,7 +3,7 @@
 
 <!--more-->
 
-I started getting myself familiarized with machine learning in the last couple of months. In this series of blog posts 
+> I started getting myself familiarized with machine learning in the last couple of months. In this series of blog posts 
 I will try to organize and summarize the things I learnt. Subsequent posts will also present final outcomes of few 
 exciting projects I have completed. Let's get started.
 

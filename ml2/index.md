@@ -22,7 +22,7 @@ some of these steps. Now, let's review what these steps are and how to perform t
 To go through these steps, I downloaded one of the most popular data sets from Kaggle (please see 
 [here](https://www.kaggle.com/fedesoriano/heart-failure-prediction) for a detailed description about the data set) and 
 modified it a little bit to highlight these steps. The modified data set can be found 
-[here](https://raw.githubusercontent.com/jkkbuddika/Datasets_ML/).
+[here](https://github.com/jkkbuddika/Datasets_ML/blob/main/heart.csv).
 {{< /admonition >}}
 
 ### 1. Importing and exploring the data set
@@ -319,3 +319,8 @@ model. Please note that depending on the problem you are addressing and the natu
 make alterations to this general scheme. As you have seen, there are multiple ways of achieving the same final goal. 
 I strongly advise trying many possible combinations and figure out the best set of steps that provide you with a 
 model that performs well.
+
+{{< admonition note "Google Colaboratory notebook" >}}
+You can access the Google Colaboratory notebook of this blog post by clicking 
+[here](https://colab.research.google.com/drive/1Yk3dF_JMevNZCoBUub_xE2XC_HHl2_Iq#scrollTo=2NAd0EAzkXn3).
+{{< /admonition >}}

@@ -12,7 +12,7 @@ some of these steps. Now, let's review what these steps are and how to perform t
 ### Steps of data pre-processing
 
 1. Importing and exploring the data set
-2. Generate matrix of features and dependent variable vector
+2. Create matrix of features and dependent variable vector
 3. Taking care of missing/NULL/NaN data
 4. Encoding categorical data
 5. Splitting the data set into training and test data

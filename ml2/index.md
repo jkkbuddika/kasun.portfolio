@@ -191,8 +191,8 @@ Likewise, there are many approaches to encode these categorical data. Two very f
 categorical variable. For instance, if the categorical variable contains 3 categories, 3 binary variables are created.
 
 Let's employ label encoding for *Sex* and one-hot encoding for *ChestPainType*, so that we can see how each can be 
-done. We can use the `sklearn.preprocessing` module for both of these. I encourage you to use `shape` attribute and 
-track the shape of the array. See what you find.
+done. We can use the `sklearn.preprocessing` module for both of these. I encourage you to use the `shape` attribute and 
+track the shape of the array as you go through encoding steps below. See what you find.
 
 {{< admonition warning "Before label encoding" false >}}
 ```
@@ -323,5 +323,5 @@ model that performs well.
 
 {{< admonition note "Google Colaboratory notebook" >}}
 You can access the Google Colaboratory notebook of this blog post by clicking 
-[here](https://colab.research.google.com/drive/1Yk3dF_JMevNZCoBUub_xE2XC_HHl2_Iq#scrollTo=2NAd0EAzkXn3).
+[here](https://colab.research.google.com/drive/1Yk3dF_JMevNZCoBUub_xE2XC_HHl2_Iq#scrollTo=h7dhhT1kDXaM).
 {{< /admonition >}}

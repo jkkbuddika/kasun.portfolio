@@ -74,7 +74,7 @@
 
 > * Academic advisor: Dr. Nick Sokol
 > * Molecularly identified and functionally characterized novel classes of cytoplasmic messenger-ribonucleoprotein complexes (mRNPs) in Drosophila intestinal stem cells
-> * Authored 11 papers (7 already published, 1 accepted, and 3 more in preparation)
+> * Authored 11 papers (8 already published, 1 pre-print, and 2 more in preparation)
 > * Implemented and deployed computational pipelines for RNA-seq/RIP-seq, eCLIP-seq and small RNA-seq data analysis with detailed documentation
 > * Discovered molecular mechanisms underlying intestinal stem cell maintenance by creatively combining   microscopy, FACS, transcriptomic analysis, RT-qPCR and in situ hybridization
 > * Assembled and led two undergraduate research groups

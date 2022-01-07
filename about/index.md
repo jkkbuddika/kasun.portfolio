@@ -14,6 +14,8 @@
 #### :(fas fa-laptop fa-fw): Bioinformatics / Data Science
 > * NGS data analysis (STAR, Bowtie 2, SAMtools, bedtools, Picard, etc.)
 > * eCLIP-seq, RNA-seq, small RNA-seq
+> * Databases (NCBI, Ensembl , UCSC Genome Browser, *etc*.)
+> * Bioinformatics file types (FASTA, FASTQ, BED, GTF, GFF3, SAM, BAM, *etc*.)
 > * ML basics (unsupervised, supervised, reinforcement learning, etc.)
 > * Cloud-based computing basics (AWS)
 > * Command-line operations and shell scripting
@@ -22,12 +24,14 @@
 > * Web applications (Streamlit, Heroku, Shiny apps, *etc*.)
 > * Relational databases (MySQL)
 > * Version control (Git)
+> * Agile project management (Scrum, Jira)
 
 #### :(fas fa-dna fa-fw): Molecular Biology
 > * DNA/RNA extraction
 > * PCR, RT-qPCR, and oligonucleotide design
 > * Molecular cloning (Gibson assembly)
 > * CRISPR/Cas9 and gRNA design
+> * RNA interference
 > * Fluorescent activated cell sorting (FACS)
 > * NGS library preparation
 > * IP, SDS-PAGE and western blotting

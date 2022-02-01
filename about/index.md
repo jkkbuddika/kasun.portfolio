@@ -62,7 +62,11 @@
 
 ### Professional and Research Experience
 
-#### :(fas fa-industry fa-fw): *2021.04-Present*&nbsp;&nbsp;&nbsp;&nbsp;Probe Design Scientist, Advanced Cell Diagnostics, Newark, CA, USA
+##### :(fas fa-building fa-fw): *2022.02-Present*&nbsp;&nbsp;&nbsp;&nbsp;Bioinformatics Engineer, Alamar Biosciences, Fremont, CA, USA
+
+> * To be updated
+
+##### :(fas fa-industry fa-fw): *2021.04-2022.01*&nbsp;&nbsp;&nbsp;&nbsp;Probe Design Scientist, Advanced Cell Diagnostics, Newark, CA, USA
 
 > * Designed and *in silico* validated RNAscope/BaseScope probes using existing algorithms
 > * Developed and established novel algorithms to streamline downstream probe order preparation and design file handling steps
@@ -70,7 +74,7 @@
 > * Frequently communicated with customers before and after probe design
 > * Conducted a series of coding training sessions to improve coding skills of the Probe Design and Genomics Technical support team members (8+ participants)
 
-#### :(fas fa-user-graduate fa-fw): *2015.08-2021.03*&nbsp;&nbsp;&nbsp;&nbsp;Graduate Student, Indiana University, Bloomington, IN, USA
+##### :(fas fa-user-graduate fa-fw): *2015.08-2021.03*&nbsp;&nbsp;&nbsp;&nbsp;Graduate Student, Indiana University, Bloomington, IN, USA
 
 > * Academic advisor: Dr. Nick Sokol
 > * Molecularly identified and functionally characterized novel classes of cytoplasmic messenger-ribonucleoprotein complexes (mRNPs) in Drosophila intestinal stem cells
@@ -82,7 +86,7 @@
 > * Developed a novel, dissection-free method to biochemically profile stem cells in intact animals
 > * Performed RIP- and CLIP-seq transcriptomic analyses of stem cells
 
-#### :(fas fa-university fa-fw): *2013.08-2015.03*&nbsp;&nbsp;&nbsp;&nbsp;Undergraduate Researcher, University of Colombo, Sri Lanka
+##### :(fas fa-university fa-fw): *2013.08-2015.03*&nbsp;&nbsp;&nbsp;&nbsp;Undergraduate Researcher, University of Colombo, Sri Lanka
 
 > * Academic advisors: Dr. C. D. Wijayarathna and Dr. P. Soyza
 > * Determined antibacterial and antioxidant properties of extracts prepared from the endemic plant *Oldenlandia umbellate* using various biological and/or colorimetric assays

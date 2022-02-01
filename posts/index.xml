@@ -3,7 +3,13 @@
         <title>All Posts - Personal Portfolio</title>
         <link>/posts/</link>
         <description>All Posts | Personal Portfolio</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 24 Jan 2022 15:22:40 &#43;0800</lastBuildDate><atom:link href="/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 30 Jan 2022 05:30:00 &#43;0800</lastBuildDate><atom:link href="/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>BioPieces XI: Insights of RNA Biology</title>
+    <link>/talk1/</link>
+    <pubDate>Sun, 30 Jan 2022 05:30:00 &#43;0800</pubDate><guid>/talk1/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>Coordinated repression of pro-differentiation genes via P-bodies and transcription maintains Drosophila intestinal stem cell identity</title>
     <link>/buddika-huang-2022/</link>
     <pubDate>Mon, 24 Jan 2022 15:22:40 &#43;0800</pubDate><guid>/buddika-huang-2022/</guid>
@@ -55,12 +61,6 @@
     <title>Lactate dehydrogenase and glycerol-3-phosphate dehydrogenase cooperatively regulate growth and carbohydrate metabolism during Drosophila melanogaster larval development</title>
     <link>/li-buddika-2019/</link>
     <pubDate>Thu, 12 Sep 2019 08:57:40 &#43;0800</pubDate><guid>/li-buddika-2019/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Polycomb group (PcG) proteins and Pax6 cooperate to inhibit in vivo reprogramming of the developing Drosophila eye</title>
-    <link>/zhu-buddika-2018/</link>
-    <pubDate>Wed, 04 Apr 2018 08:57:40 &#43;0800</pubDate><guid>/zhu-buddika-2018/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>
